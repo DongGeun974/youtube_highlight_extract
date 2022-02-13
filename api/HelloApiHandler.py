@@ -72,6 +72,11 @@ class HelloApiHandler(Resource):
         finish = time.perf_counter()
         print(f'Finished in {round(finish - start, 2)} second(s)')
 
+        if res == False:
+            return {
+                "error" : "id is not valid"
+            }
+
         """
         stream data fetch end
         """

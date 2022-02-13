@@ -25,6 +25,9 @@ def streamProcess(url):
     print('::stream::')
     url_id = url.split("=")[1]
 
+    if len(url_id) != 11:
+        return False
+
     with yt_dlp.YoutubeDL(opts) as ydl:
         ydl.download([url])
         info_dict = ydl.extract_info(url, download=False)
