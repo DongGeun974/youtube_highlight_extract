@@ -32,6 +32,8 @@ def streamProcess(url):
         ydl.download([url])
         info_dict = ydl.extract_info(url, download=False)
         duration = info_dict.get('duration', None)
+        title = info_dict.get('title')
+        thumbnail = info_dict.get('thumbnail')
 
     audio= audioProcess(url_id)
     video= videoProcess(url_id)
@@ -46,6 +48,10 @@ def streamProcess(url):
     os.remove(folder + '/api/extract/' + target)
     print('delete stream target!!')
 
-    return {'audio' : audio,
+    return {
+            'audio' : audio,
             'video' : video,
-            'chat' : chat}
+            'chat' : chat,
+            'title' : title,
+            'thumbnail' : thumbnail,
+            }
