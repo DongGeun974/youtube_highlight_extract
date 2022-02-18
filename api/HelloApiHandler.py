@@ -14,12 +14,23 @@ import time
 
 from password import dbpw, dbip
 
+from openpyxl import load_workbook
+
 class HelloApiHandler(Resource):
     def get(self):
+        load_wb = load_workbook("test.xlsx", data_only=True)
+        load_ws = load_wb['Sheet']
+
+        all_values = []
+        for row in load_ws.rows:
+            row_value = []
+            for cell in row:
+                row_value.append(cell.value)
+            all_values.append(row_value)
+        # print(getsizeof(all_values))
+
         return {
-            "type": "GET",
-            'resultStatus' : "SUCCESS",
-            'message' : "Hello Api Handler"
+            'excel' : all_values
         }
 
     def post(self):

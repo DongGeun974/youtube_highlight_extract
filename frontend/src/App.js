@@ -3,6 +3,7 @@ import React from "react";
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Save from './pages/Save'
+import Chat from "./pages/Chat";
 
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/save" element={<Save />} />
+        <Route path="/chat" element={<Chat />} />
     </Routes>
   );
 };

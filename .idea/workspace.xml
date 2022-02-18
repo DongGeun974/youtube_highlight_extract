@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5c5b04ca-0f4e-4b2b-b307-6905e5f9ee2e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/HelloApiHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/HelloApiHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/public" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\public" />
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\src\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract" />
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\src" />
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\src\pages" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,7 +100,16 @@
       <workItem from="1644914595451" duration="964000" />
       <workItem from="1644919158003" duration="4856000" />
       <workItem from="1644926217509" duration="2161000" />
-      <workItem from="1645009018973" duration="7130000" />
+      <workItem from="1645009018973" duration="7310000" />
+      <workItem from="1645020871386" duration="1465000" />
+      <workItem from="1645025907063" duration="4020000" />
+      <workItem from="1645039818784" duration="1520000" />
+      <workItem from="1645066244017" duration="6000" />
+      <workItem from="1645072559368" duration="609000" />
+      <workItem from="1645088908103" duration="37000" />
+      <workItem from="1645089412287" duration="8022000" />
+      <workItem from="1645182125957" duration="21738000" />
+      <workItem from="1645207711010" duration="2444000" />
     </task>
     <servers />
   </component>

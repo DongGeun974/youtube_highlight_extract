@@ -53,6 +53,12 @@ const Home = () => {
     })
   }
 
+  function chat(e)
+  {
+    console.log("click chat")
+
+  }
+
   return (
       <div className="App">
         <header className="App-header">
@@ -66,6 +72,10 @@ const Home = () => {
 
           <button onClick={getMethod}>get method 버튼</button>
           <Link to={saveUrl}>공유하기</Link>
+
+          <Link to={"/chat"}>
+            <button onClick={chat}>go chat</button>
+          </Link>
         </header>
       </div>
   );
