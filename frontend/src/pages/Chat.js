@@ -7,7 +7,10 @@ const Chat = () => {
     const [data, setData] = useState();
     const [num, setNum] = useState(0)
     const [flow, setFlow] = useState([]);
+    const [sliderVal, setSliderVal] = useState(0)
+    const [current, setCurrent] = useState(0)
     const fuckScroll = document.querySelector('#fuckScroll')
+
     useEffect(()=>{
         // console.log('call get method')
         // axios.get('http://localhost:5000/flask/hello').then(response =>
@@ -28,9 +31,19 @@ const Chat = () => {
 
         setFlow((flow)=>([...flow, String(data[num])]))
         setNum(num+1)
+    }
 
-        console.log(fuckScroll.scrollTop)
-        console.log(fuckScroll.scrollHeight)
+    function handleChange(e, val) {
+        setSliderVal(val)
+        if (current < val)
+        {
+            for (let i = current; i < val; i++)
+            {
+                setFlow((flow)=>([...flow, String(data[i])]))
+                fuckScroll.scrollTop = fuckScroll.scrollHeight
+            }
+            setCurrent(val)
+        }
     }
 
     return (
@@ -46,7 +59,10 @@ const Chat = () => {
             </div>
 
             <div>
-                <Slider defaultValue={0} max={40000} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}}/>
+                <div>
+                    {sliderVal}
+                </div>
+                <Slider defaultValue={0} max={5000} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}} onChange={handleChange} />
             </div>
         </div>
     );

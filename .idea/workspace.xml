@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c5b04ca-0f4e-4b2b-b307-6905e5f9ee2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Chat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <workItem from="1645088908103" duration="37000" />
       <workItem from="1645089412287" duration="8022000" />
       <workItem from="1645182125957" duration="21738000" />
-      <workItem from="1645207711010" duration="2677000" />
+      <workItem from="1645207711010" duration="5298000" />
     </task>
     <servers />
   </component>
