@@ -62,7 +62,7 @@ const Chat = () => {
                 <div>
                     {sliderVal}
                 </div>
-                <Slider defaultValue={0} max={5000} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}} onChange={handleChange} />
+                <Slider defaultValue={0} max={10000} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}} onChangeCommitted={handleChange} />
             </div>
         </div>
     );

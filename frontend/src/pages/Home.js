@@ -76,6 +76,10 @@ const Home = () => {
           <Link to={"/chat"}>
             <button onClick={chat}>go chat</button>
           </Link>
+
+          <Link to={"/player"}>
+            <button onClick={chat}>go player</button>
+          </Link>
         </header>
       </div>
   );
