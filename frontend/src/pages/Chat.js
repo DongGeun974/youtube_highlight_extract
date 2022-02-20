@@ -1,50 +1,64 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef } from 'react';
 import axios from "axios";
 import {Slider} from "@mui/material";
 
 
 const Chat = () => {
     const [data, setData] = useState();
-    const [num, setNum] = useState(0)
     const [flow, setFlow] = useState([]);
-    const [sliderVal, setSliderVal] = useState(0)
     const [current, setCurrent] = useState(0)
-    const fuckScroll = document.querySelector('#fuckScroll')
+    const scroll = document.querySelector('#scroll')
 
     useEffect(()=>{
         // console.log('call get method')
         // axios.get('http://localhost:5000/flask/hello').then(response =>
         // {
-        //   console.log("Success", response.data.excel)
-        //     localStorage.setItem('chat',JSON.stringify(response.data.excel))
+        //     console.log("Success", response.data.chat)
+        //     localStorage.setItem('chat',JSON.stringify(response.data.chat))
         // }).catch(error =>
         // {
-        //   console.log(error)
+        //     console.log(error)
         // })
         const chatData = localStorage.getItem("chat")
         setData(JSON.parse(chatData))
+
+        if (JSON.parse(chatData)[0] !== undefined)
+        {
+            setFlow([JSON.parse(chatData)[0].map((value) =>(current+' : '+value))])
+        }
     },[])
+
+    const mounted = useRef(false);
+
+    useEffect(() => {
+        if (!mounted.current) {
+            mounted.current = true;
+        } else {
+            scroll.scrollTop = scroll.scrollHeight
+        }
+    });
 
     function click(e)
     {
-        fuckScroll.scrollTop = fuckScroll.scrollHeight
-
-        setFlow((flow)=>([...flow, String(data[num])]))
-        setNum(num+1)
+        if (data[current+1] !== undefined)
+        {
+            setFlow((flow)=>([...flow, data[current+1].map((value) =>(current+1+' : '+value))]))
+        }
+        setCurrent(current+1)
     }
 
     function handleChange(e, val) {
-        setSliderVal(val)
-        if (current < val)
+        if (data[val] !== undefined)
         {
-            for (let i = current; i < val; i++)
-            {
-                setFlow((flow)=>([...flow, String(data[i])]))
-                fuckScroll.scrollTop = fuckScroll.scrollHeight
-            }
-            setCurrent(val)
+            setFlow([data[val].map((value) =>(val+' : '+value))])
         }
+        else
+        {
+            setFlow([])
+        }
+        setCurrent(val)
     }
+
 
     return (
         <div className="App">
@@ -53,16 +67,16 @@ const Chat = () => {
                 <button onClick={click}>click</button>
             </div>
             <div>
-                <div style={{ width: 400, height:600, overflow:"scroll", display:"inline-block", wordBreak:"break-all", textAlign:'left'}} id='fuckScroll'>
-                    {flow.map((value, index)=><div key={index}>{value}<br /></div>)}
+                <div style={{ width: 400, height:600, overflow:"scroll", display:"inline-block", wordBreak:"break-all", textAlign:'left'}} id='scroll'>
+                    {flow.map((value, index)=>value ? <div key={index}>{value.map((each,idx)=> each ? <div key={idx}>{each}</div> : null)}</div> : null)}
                 </div>
             </div>
 
             <div>
                 <div>
-                    {sliderVal}
+                    {current}
                 </div>
-                <Slider defaultValue={0} max={10000} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}} onChangeCommitted={handleChange} />
+                <Slider defaultValue={0} max={100} aria-label="Default" valueLabelDisplay="auto" style={{width:'70%'}} onChangeCommitted={handleChange} value={current}/>
             </div>
         </div>
     );

@@ -15,22 +15,28 @@ import time
 from password import dbpw, dbip
 
 from openpyxl import load_workbook
+import json
+
 
 class HelloApiHandler(Resource):
     def get(self):
-        load_wb = load_workbook("test.xlsx", data_only=True)
-        load_ws = load_wb['Sheet']
+        # load_wb = load_workbook("test.xlsx", data_only=True)
+        # load_ws = load_wb['Sheet']
+        #
+        # all_values = []
+        # for row in load_ws.rows:
+        #     row_value = []
+        #     for cell in row:
+        #         row_value.append(cell.value)
+        #     all_values.append(row_value)
+        # # print(getsizeof(all_values))
+        with open("data.json", "r", encoding="utf-8-sig") as f:
+            contents = f.read()
+            json_data = json.loads(contents)
 
-        all_values = []
-        for row in load_ws.rows:
-            row_value = []
-            for cell in row:
-                row_value.append(cell.value)
-            all_values.append(row_value)
-        # print(getsizeof(all_values))
 
         return {
-            'excel' : all_values
+            'chat' : json_data
         }
 
     def post(self):
