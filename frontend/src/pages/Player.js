@@ -4,7 +4,7 @@ import Duration from './Duration'
 
 const Player = () => {
 
-    const [url ,setUrl] = useState('https://www.youtube.com/watch?v=dT8dmvAzIqA')
+    const [url ,setUrl] = useState('https://www.youtube.com/watch?v=gdZLi9oWNZg')
     const [playing ,setPlaying] = useState(true)
     const [controls ,setControls] = useState(false)
     const [volume ,setVolume] = useState(0.8)

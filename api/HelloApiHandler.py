@@ -20,23 +20,9 @@ import json
 
 class HelloApiHandler(Resource):
     def get(self):
-        # load_wb = load_workbook("test.xlsx", data_only=True)
-        # load_ws = load_wb['Sheet']
-        #
-        # all_values = []
-        # for row in load_ws.rows:
-        #     row_value = []
-        #     for cell in row:
-        #         row_value.append(cell.value)
-        #     all_values.append(row_value)
-        # # print(getsizeof(all_values))
-        with open("data.json", "r", encoding="utf-8-sig") as f:
-            contents = f.read()
-            json_data = json.loads(contents)
-
-
         return {
-            'chat' : json_data
+            'status' : '200',
+            'message' : 'Success'
         }
 
     def post(self):
@@ -48,37 +34,37 @@ class HelloApiHandler(Resource):
 
         request_url = args['url']
 
-        """
-        check database
-        """
-        db = pymysql.connect(
-            host=dbip,
-            port=3306,
-            user='root',
-            password=dbpw,
-            db='highlighting', charset='utf8', autocommit=True  # 실행결과확정
-        )
-
-        cursor = db.cursor()
-        sql = 'SELECT result FROM youtube WHERE url="' + request_url + '";'
-        cursor.execute(sql)
-
-        data = cursor.fetchone()
-
-        if data :
-            # if url in db
-            result = eval(data[0])
-
-            final_ret = {
-                "type": "POST",
-                "status": "This is Database",
-                "url": request_url,
-                "result": result
-            }
-
-            db.close()
-            print("Success read DB")
-            return final_ret
+        # """
+        # check database
+        # """
+        # db = pymysql.connect(
+        #     host=dbip,
+        #     port=3306,
+        #     user='root',
+        #     password=dbpw,
+        #     db='highlighting', charset='utf8', autocommit=True  # 실행결과확정
+        # )
+        #
+        # cursor = db.cursor()
+        # sql = 'SELECT result FROM youtube WHERE url="' + request_url + '";'
+        # cursor.execute(sql)
+        #
+        # data = cursor.fetchone()
+        #
+        # if data :
+        #     # if url in db
+        #     result = eval(data[0])
+        #
+        #     final_ret = {
+        #         "type": "POST",
+        #         "status": "This is Database",
+        #         "url": request_url,
+        #         "result": result
+        #     }
+        #
+        #     db.close()
+        #     print("Success read DB")
+        #     return final_ret
 
         """
         stream data fetch start
@@ -105,16 +91,16 @@ class HelloApiHandler(Resource):
             "result" : res
         }
 
-        """
-        insert database
-        """
-        title = res['title']
-        title = title.replace("'", "\\'")
-        json_str = '{"audio":'+str(res['audio'])+', "video":'+str(res['video'])+', "chat":'+str(res['chat'])+', "title":'+str('"'+title+'"')+', "thumbnail":'+str('"'+res['thumbnail']+'"')+'}'
-        sql = "insert into youtube(url, result) values('"+request_url+"', '"+json_str+"');"
-        cursor.execute(sql)
-        print("Success insert DB")
-
-        db.close()
+        # """
+        # insert database
+        # """
+        # title = res['title']
+        # title = title.replace("'", "\\'")
+        # json_str = '{"audio":'+str(res['audio'])+', "video":'+str(res['video'])+', "chat":'+str(res['chat'])+', "title":'+str('"'+title+'"')+', "thumbnail":'+str('"'+res['thumbnail']+'"')+'}'
+        # sql = "insert into youtube(url, result) values('"+request_url+"', '"+json_str+"');"
+        # cursor.execute(sql)
+        # print("Success insert DB")
+        #
+        # db.close()
 
         return final_ret
