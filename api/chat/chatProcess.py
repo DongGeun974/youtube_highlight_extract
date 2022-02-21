@@ -54,7 +54,7 @@ def _calculate_superchat(currency, amount) :
 
 def chatProcess(url_id, duration) :
     print("########################################################")
-    print('audio ' + url_id)
+    print('chat ' + url_id)
     print("########################################################")
     """"""
 
