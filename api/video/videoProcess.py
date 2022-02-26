@@ -11,6 +11,11 @@ import os
 import ffmpeg
 import numpy
 
+W, H = 128, 72
+FPS = 10
+DIFF_CUTLINE = 5000000
+
+
 def videoProcess(url_id):
     print("########################################################")
     print('video ' + url_id)
@@ -19,14 +24,13 @@ def videoProcess(url_id):
 
     folder = os.getcwd()
     target = ''
-    for filename in os.listdir(folder+'/api/extract/'):
+    for filename in os.listdir(folder + '/'):
         if url_id in filename:
             target = filename
 
-    W, H, FPS = 128, 72, 10
     out, err = (
         ffmpeg
-            .input(folder+'/api/extract/'+target)
+            .input(folder + '/' + target)
             .filter('fps', fps=FPS, round='up')
             .filter('scale', w=W, h=H)
             .output('pipe:', format='rawvideo', pix_fmt='rgb24')
@@ -38,21 +42,18 @@ def videoProcess(url_id):
             .reshape([-1, H, W, 3])
     )
 
-    diff = []
-    cal = []
-    before = 0
-    for i in range(len(frames)):
-        now = int(frames[i].sum())
-        diff.append(abs(now - before) // 1000)
+    VideoDATA_3600perHOUR = []
+    summ, before = 0, numpy.array([])
+    for i in range(1, len(frames)):
+        if not i % FPS:
+            VideoDATA_3600perHOUR.append(min(summ, DIFF_CUTLINE))
+            summ = 0
+        now = frames[i]
+        summ += abs(int(now.sum()) - int(before.sum()))
         before = now
 
-    summ = 0
-    for i in range(len(diff)):
-        if not i % FPS:
-            cal.append(summ)
-            summ = 0
-        summ += diff[i]
+    VideoDATA_3600perHOUR[0] = 0
 
-    return cal
+    return VideoDATA_3600perHOUR
 
     """"""

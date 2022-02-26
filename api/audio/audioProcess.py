@@ -11,6 +11,9 @@ import os
 import numpy
 import ffmpeg
 
+SAMPLERATE = 11025
+GETPICK_PERSEC = 2
+
 def audioProcess(url_id):
     print("########################################################")
     print('audio ' + url_id)
@@ -19,33 +22,30 @@ def audioProcess(url_id):
 
     folder = os.getcwd()
     target = ''
-    for filename in os.listdir(folder+'/api/extract/'):
+    for filename in os.listdir(folder+'/'):
         if url_id in filename:
             target = filename
 
-    SAMPLERATE = 44100
-
     out, err = (
         ffmpeg
-            .input(folder+'/api/extract/'+target)
+            .input(folder+'/'+target)
             .output('-', format='f32le', acodec='pcm_f32le', ac=1, ar=str(SAMPLERATE))
             .run(capture_stdout=True)
     )
 
     amplitudes = numpy.frombuffer(out, numpy.float32)
 
-    FPS = 2
-    persec = SAMPLERATE // FPS
-    cal = []
-    summ = 0
-    dirr = 1
-    for i in range(len(amplitudes)):
-        if not i % persec:
-            cal.append(int(1000 * summ // persec) * dirr)
-            summ = 0
-            dirr = -dirr
-        summ += abs(amplitudes[i])
+    AudioPick_7200perHOUR = []
 
-    return cal
+    persec = SAMPLERATE // GETPICK_PERSEC
+    pick, dirr = 0, 1
+    for i in range(1, len(amplitudes)) :
+        if not i %persec :
+            AudioPick_7200perHOUR.append(int(1000 *pick) *dirr)
+            pick = 0
+            dirr = -dirr
+        pick = max(pick, abs(amplitudes[i]))
+
+    return AudioPick_7200perHOUR
 
     """"""
