@@ -78,7 +78,11 @@ const Home = () => {
           </Link>
 
           <Link to={"/player"}>
-            <button onClick={chat}>go player</button>
+            <button>go player</button>
+          </Link>
+
+          <Link to={"/login"}>
+            <button>go login</button>
           </Link>
         </header>
       </div>

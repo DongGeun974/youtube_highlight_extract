@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Save from './pages/Save'
 import Chat from "./pages/Chat";
 import Player from "./pages/Player";
+import Login from "./pages/Login";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="/save" element={<Save />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/player" element={<Player />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
     );
 };
