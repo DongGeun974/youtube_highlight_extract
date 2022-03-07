@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c5b04ca-0f4e-4b2b-b307-6905e5f9ee2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/HelloApiHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/HelloApiHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +65,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\api" />
-      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\public" />
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\src\pages" />
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract" />
@@ -151,7 +151,21 @@
       <workItem from="1645441284433" duration="5417000" />
       <workItem from="1645688554458" duration="597000" />
       <workItem from="1645802324335" duration="6072000" />
-      <workItem from="1645867953230" duration="22650000" />
+      <workItem from="1645867953230" duration="23082000" />
+      <workItem from="1645941425782" duration="2583000" />
+      <workItem from="1645974735628" duration="3460000" />
+      <workItem from="1646031245978" duration="760000" />
+      <workItem from="1646058636454" duration="769000" />
+      <workItem from="1646064624570" duration="6000" />
+      <workItem from="1646072565875" duration="49000" />
+      <workItem from="1646234103646" duration="4000" />
+      <workItem from="1646241138852" duration="30000" />
+      <workItem from="1646396244640" duration="21000" />
+      <workItem from="1646404292327" duration="12000" />
+      <workItem from="1646476985822" duration="1840000" />
+      <workItem from="1646564971534" duration="5150000" />
+      <workItem from="1646661839510" duration="1702000" />
+      <workItem from="1646690568963" duration="2651000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,9 @@ from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
 from api.HelloApiHandler import HelloApiHandler
 from api.BookMarkerApiHandler import BookMarkerApiHandler
+from api.LogInApiHandler import LogInApiHandler
+from api.SignInApiHandler import SignInApiHandler
+from api.OauthApiHandler import OauthApiHandler
 
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 CORS(app)
@@ -23,3 +26,6 @@ def serve(path):
 
 api.add_resource(HelloApiHandler, '/flask/hello')
 api.add_resource(BookMarkerApiHandler, '/bookmarker')
+api.add_resource(LogInApiHandler, '/logIn')
+api.add_resource(SignInApiHandler, '/signIn')
+api.add_resource(OauthApiHandler, '/OAuth')
