@@ -15,6 +15,7 @@ from api.BookMarkerApiHandler import BookMarkerApiHandler
 from api.LogInApiHandler import LogInApiHandler
 from api.SignInApiHandler import SignInApiHandler
 from api.OauthApiHandler import OauthApiHandler
+from api.ExtensionApiHandler import ExtensionApiHandler
 
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 CORS(app)
@@ -29,3 +30,4 @@ api.add_resource(BookMarkerApiHandler, '/bookmarker')
 api.add_resource(LogInApiHandler, '/logIn')
 api.add_resource(SignInApiHandler, '/signIn')
 api.add_resource(OauthApiHandler, '/OAuth')
+api.add_resource(ExtensionApiHandler, '/extension')
