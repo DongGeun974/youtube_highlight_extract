@@ -9,12 +9,21 @@
 
 import json
 
+import yt_dlp
 from flask_restful import Api, Resource, reqparse
 
 def get_bookmarker(URL_ID):
     path = './bookmarker_storage/' + URL_ID + '.json'
-    with open(path, 'r', encoding="UTF-8") as fp:
+    try :
+        fp = open(path, 'r', encoding="UTF-8")
         return json.load(fp)
+    except :
+        return False
+
+def get_duration(url):
+    with yt_dlp.YoutubeDL() as ydl:
+        info_dict = ydl.extract_info(url, download=False)
+        return info_dict.get('duration', None)
 
 def _check_platform(url) :
     if url[:32] == "https://www.youtube.com/watch?v=" :
@@ -40,9 +49,17 @@ class ExtensionApiHandler(Resource):
 
         _, url_id = _check_platform(request_url)
         bookmarker = get_bookmarker(url_id)
+        duration = get_duration(request_url)
 
-        return {
-            'status': '200',
-            'message': 'success get bookmarker',
-            'bookmarker' : bookmarker,
-        }
+        if bookmarker:
+            return {
+                'status': '200',
+                'message': 'success get bookmarker',
+                'bookmarker' : bookmarker,
+                'duration' : duration,
+            }
+        else:
+            return {
+                'status': '400',
+                'message': 'no bookmarker',
+            }
