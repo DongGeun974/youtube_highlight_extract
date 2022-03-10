@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c5b04ca-0f4e-4b2b-b307-6905e5f9ee2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ExtensionApiHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ExtensionApiHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarker_storage/1419172979.json" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarker_storage/1419172979.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +56,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bookmarker_storage" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\bookmarker_storage" />
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\api" />
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\src\pages" />
       <recent name="C:\Users\Hwang\Desktop\sw사관학교정글\나만의무기\youtube_highlight_extract\frontend\public" />
@@ -166,7 +166,11 @@
       <workItem from="1646564971534" duration="5150000" />
       <workItem from="1646661839510" duration="1702000" />
       <workItem from="1646690568963" duration="2990000" />
-      <workItem from="1646842684393" duration="7411000" />
+      <workItem from="1646842684393" duration="7753000" />
+      <workItem from="1646852772070" duration="242000" />
+      <workItem from="1646882846168" duration="602000" />
+      <workItem from="1646893703463" duration="699000" />
+      <workItem from="1646933554191" duration="65000" />
     </task>
     <servers />
   </component>
